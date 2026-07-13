@@ -1,0 +1,11 @@
+{
+    "name":"Productive New Tab Extension",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "chrome_url_overrides": { "newtab": "index.html" },
+    "permissions": ["storage", "identity"],
+    "oauth2": {
+        "client_id": "201896499130-ke66u7skb2q0384s4757kmfvrb4uab2p.apps.googleusercontent.com",
+        "scopes": ["https://www.googleapis.com/auth/calendar.events"]
+    }
+}

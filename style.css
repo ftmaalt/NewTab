@@ -1,0 +1,248 @@
+body {
+    background-image: url('./assets/bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ---------- LEFT COLUMN ---------- */
+.left-container {
+    flex: 1;
+    padding: 70px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.date-display {
+    color: #1a1a1a;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.time-display {
+    color: #1a1a1a;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+#greeting {
+    font-size: 26px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+/* Search bar styled like the underline input in the mockup */
+.search-bar {
+    max-width: 420px;
+    margin-bottom: 30px;
+}
+
+.search-bar input[type="search"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid #444;
+    background: transparent;
+    font-size: 16px;
+    padding: 6px 4px;
+    color: #1a1a1a;
+    outline: none;
+}
+
+.search-bar input[type="search"]::placeholder {
+    color: #555;
+}
+
+.search-bar input[type="submit"] {
+    display: none; /* hide button, submit on Enter for a cleaner look like the mockup */
+}
+
+/* Todo checklist styled like the mockup's circular checkboxes */
+.to-do {
+    max-width: 420px;
+}
+
+.to-do h3 {
+    font-size: 15px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.todo-input {
+    border: none;
+    border-bottom: 1px solid #999;
+    background: transparent;
+    font-size: 15px;
+    padding: 4px;
+    margin-bottom: 12px;
+    width: 100%;
+    outline: none;
+}
+
+.toDO-btn {
+    border: none;
+    background: #4285F4;
+    color: white;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    color: #1a1a1a;
+}
+
+.todo-list li input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #888;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+}
+
+.todo-list li input[type="checkbox"]:checked {
+    background: #4285F4;
+    border-color: #4285F4;
+}
+
+.todo-list li.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* ---------- RIGHT COLUMN ---------- */
+.right-container {
+    width: 380px;
+    padding: 60px 30px;
+}
+
+.calendar-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.calendar-header .agenda-icon {
+    background: #4285F4;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.calendar-header h3 {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.add-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #555;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Event form (hidden by default) */
+.event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.event-form input {
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.event-form button {
+    padding: 9px;
+    border-radius: 8px;
+    border: none;
+    background: #4285F4;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Event pills matching the mockup's blue-gray rounded cards */
+.calendar-events {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calendar-event {
+    background: #a9bacb;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: block;
+    color: #1a1a1a;
+    transition: background 0.15s ease;
+}
+
+.calendar-event:hover {
+    background: #97acc0;
+}
+
+.calendar-event .event-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.calendar-event .event-time {
+    font-size: 13px;
+    color: #333;
+    opacity: 0.85;
+    margin-top: 3px;
+}

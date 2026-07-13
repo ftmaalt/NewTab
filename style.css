@@ -1,248 +1,283 @@
-body {
-    background-image: url('./assets/bg.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.page-wrapper {
-    display: flex;
-    min-height: 100vh;
+body{
+    background:url("./assets/bg.png") center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    font-family:"Poppins",sans-serif;
+    overflow:hidden;
 }
 
-/* ---------- LEFT COLUMN ---------- */
-.left-container {
-    flex: 1;
-    padding: 70px 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(255,255,255,.22);
+    pointer-events:none;
 }
 
-.date-display {
-    color: #1a1a1a;
-    font-size: 26px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+.page-wrapper{
+    display:flex;
+    height:100vh;
 }
 
-.time-display {
-    color: #1a1a1a;
-    font-size: 64px;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 16px;
+/* LEFT SIDE */
+
+.left-container{
+    flex:7;
+    padding:70px 55px;
+    display:flex;
+    flex-direction:column;
 }
 
-#greeting {
-    font-size: 26px;
-    font-weight: 500;
-    color: #1a1a1a;
-    margin-bottom: 30px;
+.date-display{
+    font-size:34px;
+    font-weight:500;
+    color:#111;
 }
 
-/* Search bar styled like the underline input in the mockup */
-.search-bar {
-    max-width: 420px;
-    margin-bottom: 30px;
+.time-display{
+    font-size:76px;
+    font-weight:600;
+    line-height:1;
+    margin-bottom:35px;
+    color:#111;
 }
 
-.search-bar input[type="search"] {
-    width: 100%;
-    border: none;
-    border-bottom: 1.5px solid #444;
-    background: transparent;
-    font-size: 16px;
-    padding: 6px 4px;
-    color: #1a1a1a;
-    outline: none;
+#greeting{
+    font-size:32px;
+    font-weight:500;
+    margin-bottom:60px;
+    color:#111;
 }
 
-.search-bar input[type="search"]::placeholder {
-    color: #555;
+/* Hide after user enters name */
+
+#user-name{
+    margin-bottom:35px;
 }
 
-.search-bar input[type="submit"] {
-    display: none; /* hide button, submit on Enter for a cleaner look like the mockup */
+#user-name h2{
+    font-size:22px;
+    margin-bottom:10px;
 }
 
-/* Todo checklist styled like the mockup's circular checkboxes */
-.to-do {
-    max-width: 420px;
+#name-input{
+    border:none;
+    border-bottom:2px solid rgba(0,0,0,.35);
+    background:none;
+    padding:8px 0;
+    width:250px;
+    outline:none;
 }
 
-.to-do h3 {
-    font-size: 15px;
-    font-weight: 400;
-    color: #555;
-    margin-bottom: 12px;
+#name-save{
+    margin-left:10px;
+    border:none;
+    background:#8FA6BC;
+    color:white;
+    padding:8px 18px;
+    border-radius:8px;
 }
 
-.todo-input {
-    border: none;
-    border-bottom: 1px solid #999;
-    background: transparent;
-    font-size: 15px;
-    padding: 4px;
-    margin-bottom: 12px;
-    width: 100%;
-    outline: none;
+/* SEARCH */
+
+.search-bar{
+    width:400px;
+    margin-bottom:60px;
 }
 
-.toDO-btn {
-    border: none;
-    background: #4285F4;
-    color: white;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 14px;
-    cursor: pointer;
+.search-bar input[type="search"]{
+    width:100%;
+    border:none;
+    background:none;
+    border-bottom:2px solid rgba(0,0,0,.4);
+    padding-bottom:8px;
+    font-size:22px;
+    outline:none;
 }
 
-.todo-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.search-bar input[type="search"]::placeholder{
+    color:#666;
 }
 
-.todo-list li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 15px;
-    color: #1a1a1a;
+.search-bar input[type="submit"]{
+    display:none;
 }
 
-.todo-list li input[type="checkbox"] {
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 1.5px solid #888;
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 0;
+/* TODO */
+
+.to-do{
+    width:400px;
 }
 
-.todo-list li input[type="checkbox"]:checked {
-    background: #4285F4;
-    border-color: #4285F4;
+.to-do h3{
+    font-size:22px;
+    font-weight:400;
+    color:#555;
+    margin-bottom:20px;
 }
 
-.todo-list li.completed span {
-    text-decoration: line-through;
-    opacity: 0.6;
+.todo-input{
+    width:100%;
+    border:none;
+    background:none;
+    border-bottom:2px solid rgba(0,0,0,.35);
+    padding-bottom:8px;
+    font-size:20px;
+    outline:none;
 }
 
-/* ---------- RIGHT COLUMN ---------- */
-.right-container {
-    width: 380px;
-    padding: 60px 30px;
+.toDO-btn{
+    display:none;
 }
 
-.calendar-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(6px);
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+.todo-list{
+    list-style:none;
+    margin-top:35px;
+    padding:0;
 }
 
-.calendar-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 18px;
+.todo-list li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:22px;
+    margin-bottom:18px;
+    color:#111;
 }
 
-.calendar-header .agenda-icon {
-    background: #4285F4;
-    color: white;
-    font-size: 12px;
-    font-weight: 700;
-    width: 26px;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
+.todo-list li input[type="checkbox"]{
+    appearance:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    border:1.5px solid #666;
+    cursor:pointer;
 }
 
-.calendar-header h3 {
-    flex: 1;
-    font-size: 17px;
-    font-weight: 500;
-    color: #1a1a1a;
-    margin: 0;
+.todo-list li input[type="checkbox"]:checked{
+    background:#8FA6BC;
+    border-color:#8FA6BC;
 }
 
-.add-btn {
-    background: none;
-    border: none;
-    font-size: 22px;
-    color: #555;
-    cursor: pointer;
-    line-height: 1;
+.todo-list li.completed span{
+    text-decoration:line-through;
+    opacity:.5;
 }
 
-/* Event form (hidden by default) */
-.event-form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 16px;
+.refreshlist{
+    display:none;
 }
 
-.event-form input {
-    padding: 9px 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+/* RIGHT SIDE */
+
+.right-container{
+    flex:3;
+    background:rgba(255,255,255,.34);
+    backdrop-filter:blur(8px);
+    border-left:1px solid rgba(255,255,255,.45);
+    padding:35px 28px;
 }
 
-.event-form button {
-    padding: 9px;
-    border-radius: 8px;
-    border: none;
-    background: #4285F4;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
+.calendar-header{
+    display:flex;
+    align-items:center;
+    margin-bottom:25px;
 }
 
-/* Event pills matching the mockup's blue-gray rounded cards */
-.calendar-events {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.calendar-header h3{
+    flex:1;
+    font-size:28px;
+    font-weight:500;
+    color:#111;
+    margin-left:12px;
 }
 
-.calendar-event {
-    background: #a9bacb;
-    border-radius: 12px;
-    padding: 14px 16px;
-    text-decoration: none;
-    display: block;
-    color: #1a1a1a;
-    transition: background 0.15s ease;
+.agenda-icon img{
+    width:28px;
+    height:28px;
 }
 
-.calendar-event:hover {
-    background: #97acc0;
+.add-btn{
+    background:none;
+    border:none;
+    font-size:32px;
+    cursor:pointer;
+    color:#222;
 }
 
-.calendar-event .event-title {
-    font-size: 15px;
-    font-weight: 600;
+/* FORM */
+
+.event-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:25px;
 }
 
-.calendar-event .event-time {
-    font-size: 13px;
-    color: #333;
-    opacity: 0.85;
-    margin-top: 3px;
+.event-form input{
+    border:none;
+    border-radius:8px;
+    padding:12px;
+    font-size:15px;
+}
+
+.event-form button{
+    border:none;
+    border-radius:8px;
+    background:#8FA6BC;
+    color:white;
+    padding:12px;
+}
+
+/* EVENTS */
+
+.calendar-events{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.calendar-event{
+    background:#AEBFD1;
+    border-radius:10px;
+    padding:18px;
+    transition:.2s;
+}
+
+.calendar-event:hover{
+    background:#9FB4C9;
+    transform:translateY(-2px);
+}
+
+.calendar-event .event-title{
+    font-size:18px;
+    font-weight:500;
+}
+
+.calendar-event .event-time{
+    margin-top:6px;
+    font-size:14px;
+    color:#333;
+}
+
+/* Scroll if lots of events */
+
+.calendar-events{
+    overflow-y:auto;
+    max-height:80vh;
+}
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#b8b8b8;
+    border-radius:10px;
 }

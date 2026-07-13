@@ -3,69 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./assets/cafefavi-removebg-preview.png" type="image/x-icon">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
     <title>New Tab</title>
-<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<div class="page-wrapper">
+
     <div class="left-container">
+
         <div id="date" class="date-display"></div>
+
         <div id="time" class="time-display"></div>
-   
 
-    <div id="greeting"></div>
-    <div id="user-name">
-        <h2>What's Your name?</h2>
-        <input type="text" placeholder="Jane" id="name-input"/>
-        <button id="name-save">Save</button>
-    </div>
-    <div class="search-bar">
-        <form id=search action="https://www.google.com/search" method="get">
-  <input type="search" name="q" placeholder="Ask about anything"/>
-  <input type="submit" value="Search"/>
-</form>
-    </div>
-<div class="to-do">
-        <h3>What's on Today's Agenda?</h3>
-        <div class="tasks">
-            <div class="form">
-                <form>
-                    <input type="text" class="todo-input" placeholder="Walk the dog">
-                    <button class="toDO-btn" type="submit">Add Task</button>
+        <div id="greeting"></div>
 
-                </form>
-            </div>
-        <ul class="todo-list">
-            <!-- <input type="checkbox" name="tick" id="task-done"> -->
-            <button class="refreshlist" type="reset">Reset List</button>
-        </ul>
+        <div id="user-name">
+            <h2>What's Your name?</h2>
+
+            <input
+                type="text"
+                placeholder="Jane"
+                id="name-input">
+
+            <button id="name-save">Save</button>
         </div>
-</div>
-    </div>
-   <div class="right-container">
-    <div class="calendar-card">
-    <div class="calendar-header">
-        <span class="agenda-icon">📅</span>
-        <h3>Calendar</h3>
-        <button class="add-btn" id="show-event-form-btn">+</button>
+
+        <div class="search-bar">
+
+            <form
+                id="search"
+                action="https://www.google.com/search"
+                method="get">
+
+                <input
+                    type="search"
+                    name="q"
+                    placeholder="Search">
+
+                <input
+                    type="submit"
+                    value="Search">
+
+            </form>
+
+        </div>
+
+        <div class="to-do">
+
+            <h3>Whats on your mind?</h3>
+
+            <div class="tasks">
+
+                <div class="form">
+
+                    <form>
+
+                        <input
+                            type="text"
+                            class="todo-input"
+                            placeholder="">
+
+                        <button
+                            class="toDO-btn"
+                            type="submit">
+
+                            Add Task
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+                <ul class="todo-list">
+
+                    <button
+                        class="refreshlist"
+                        type="reset">
+
+                        Reset List
+
+                    </button>
+
+                </ul>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <form id="event-form" class="event-form" style="display:none;">
-        <input type="text" id="event-title" placeholder="Event title (e.g. CS103 Exam)" required />
-        <input type="date" id="event-date" required />
-        <input type="time" id="event-time" required />
-        <button type="submit">Add to Calendar</button>
-    </form>
+    <div class="right-container">
 
-    <div id="calendar-events" class="calendar-events">
-        <!-- events render here dynamically -->
+        <div class="calendar-header">
+
+            <span class="agenda-icon">
+
+                <img src="./assets/google-calendar.png">
+
+            </span>
+
+            <h3>Today's Agenda</h3>
+
+            <button
+                class="add-btn"
+                id="show-event-form-btn">
+
+                +
+
+            </button>
+
+        </div>
+
+        <form
+            id="event-form"
+            class="event-form"
+            style="display:none;">
+
+            <input
+                type="text"
+                id="event-title"
+                placeholder="Event title"
+                required>
+
+            <input
+                type="date"
+                id="event-date"
+                required>
+
+            <input
+                type="time"
+                id="event-time"
+                required>
+
+            <button type="submit">
+
+                Add Event
+
+            </button>
+
+        </form>
+
+        <div
+            id="calendar-events"
+            class="calendar-events">
+
+        </div>
+
     </div>
+
 </div>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 <script src="./JS/calender.js"></script>
 <script src="./JS/toDo.js"></script>
 <script src="./JS/dateTime.js"></script>
 <script src="./JS/name.js"></script>
+
 </body>
 </html>

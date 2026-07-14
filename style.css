@@ -16,8 +16,10 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
-    background:rgba(255,255,255,.22);
+
+    background: rgba(0, 0, 0, 0.35); 
     pointer-events:none;
+    z-index: -1; /* Ensures it stays strictly behind your content elements */
 }
 
 .page-wrapper{
@@ -34,25 +36,25 @@ body::before{
     flex-direction:column;
 }
 
-.date-display{
-    font-size:34px;
-    font-weight:500;
-    color:#111;
+.date-display {
+    font-size: 34px;
+    font-weight: 500;
+    color: #ffffff; /* Changed to white */
 }
 
-.time-display{
-    font-size:76px;
-    font-weight:600;
-    line-height:1;
-    margin-bottom:35px;
-    color:#111;
+.time-display {
+    font-size: 76px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 35px;
+    color: #ffffff; /* Changed to white */
 }
 
-#greeting{
-    font-size:32px;
-    font-weight:500;
-    margin-bottom:60px;
-    color:#111;
+#greeting {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: #ffffff; /* Changed to white */
 }
 
 /* Hide after user enters name */
@@ -86,28 +88,41 @@ body::before{
 
 /* SEARCH */
 
-.search-bar{
-    width:400px;
-    margin-bottom:60px;
+/* SEARCH CONTAINER FIXED FOR ICON ALIGNMENT */
+.search-bar {
+    width: 400px;
+    margin-bottom: 60px;
 }
 
-.search-bar input[type="search"]{
-    width:100%;
-    border:none;
-    background:none;
-    border-bottom:2px solid rgba(0,0,0,.4);
-    padding-bottom:8px;
-    font-size:22px;
-    outline:none;
+/* Creates a flex layout so the icon and input sit perfectly on the same line */
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6); 
+    padding-bottom: 8px;
 }
 
-.search-bar input[type="search"]::placeholder{
-    color:#666;
+/* Magnifier Icon Styling */
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: rgba(255, 255, 255, 0.6); 
+    flex-shrink: 0; 
 }
 
-.search-bar input[type="submit"]{
-    display:none;
+/* Updated Input Styling */
+.search-bar input[type="search"] {
+    width: 100%;
+    border: none;
+    background: none;
+    /* Removed the border-bottom from here since it's on the wrapper now */
+    font-size: 22px;
+    outline: none;
+    color: #ffffff;
+    padding: 0;
 }
+
 
 /* TODO */
 
@@ -115,21 +130,24 @@ body::before{
     width:400px;
 }
 
-.to-do h3{
-    font-size:22px;
-    font-weight:400;
-    color:#555;
-    margin-bottom:20px;
+.to-do h3 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #eeeeee; /* Changed to a crisp off-white */
+    margin-bottom: 20px;
 }
 
-.todo-input{
-    width:100%;
-    border:none;
-    background:none;
-    border-bottom:2px solid rgba(0,0,0,.35);
-    padding-bottom:8px;
-    font-size:20px;
-    outline:none;
+
+
+.todo-input {
+    width: 100%;
+    border: none;
+    background: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6); /* Changed to transparent white line */
+    padding-bottom: 8px;
+    font-size: 20px;
+    outline: none;
+    color: #ffffff; /* Makes typed task white */
 }
 
 .toDO-btn{
@@ -142,22 +160,24 @@ body::before{
     padding:0;
 }
 
-.todo-list li{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    font-size:22px;
-    margin-bottom:18px;
-    color:#111;
+/* Individual list item styles */
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #ffffff; /* Changed to white */
 }
 
-.todo-list li input[type="checkbox"]{
-    appearance:none;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    border:1.5px solid #666;
-    cursor:pointer;
+.todo-list li input[type="checkbox"] {
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid #ffffff;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .todo-list li input[type="checkbox"]:checked{
@@ -170,11 +190,44 @@ body::before{
     opacity:.5;
 }
 
-.refreshlist{
-    display:none;
+.todo-list li button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 0 5px;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* RIGHT SIDE */
+.todo-list li button:hover {
+    color: #ff6b6b;
+    transform: scale(1.15);
+}
+
+
+.refreshlist {
+    display: block;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s ease;
+    width: fit-content;
+}
+
+.refreshlist:hover {
+    background: rgba(255, 75, 75, 0.25); 
+    border-color: rgba(255, 75, 75, 0.4);
+}
+
+/* Right Side */
 
 .right-container{
     flex:3;
@@ -280,4 +333,9 @@ body::before{
 ::-webkit-scrollbar-thumb{
     background:#b8b8b8;
     border-radius:10px;
+}
+
+::placeholder {
+  color: #b8b8b8;
+  opacity: 1;
 }

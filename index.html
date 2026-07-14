@@ -40,26 +40,23 @@
             <button id="name-save">Save</button>
         </div>
 
-        <div class="search-bar">
+       <div class="search-bar">
 
-            <form
-                id="search"
-                action="https://www.google.com/search"
-                method="get">
+    <form id="search" action="https://www.google.com/search" method="get">
 
-                <input
-                    type="search"
-                    name="q"
-                    placeholder="Search">
+        <div class="search-input-wrapper">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
 
-                <input
-                    type="submit"
-                    value="Search">
-
-            </form>
-
+            <input type="search" name="q" placeholder="Search Google">
         </div>
 
+
+    </form>
+
+</div>
         <div class="to-do">
 
             <h3>Whats on your mind?</h3>
@@ -69,19 +66,9 @@
                 <div class="form">
 
                     <form>
+                        <input type="text" class="todo-input" maxlength="40" placeholder="">
 
-                        <input
-                            type="text"
-                            class="todo-input"
-                            placeholder="">
-
-                        <button
-                            class="toDO-btn"
-                            type="submit">
-
-                            Add Task
-
-                        </button>
+                        <button class="toDO-btn" type="submit"> Add Task </button>
 
                     </form>
 
@@ -89,13 +76,7 @@
 
                 <ul class="todo-list">
 
-                    <button
-                        class="refreshlist"
-                        type="reset">
-
-                        Reset List
-
-                    </button>
+                    <button class="refreshlist" type="reset"> Reset List</button>
 
                 </ul>
 

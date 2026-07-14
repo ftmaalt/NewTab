@@ -54,7 +54,7 @@ function renderToDo(todoItem) {
     li.appendChild(span);
     li.appendChild(deleteBtn);
 
-    // insert before the reset button so new tasks don't push it around unexpectedly
+  
     const resetBtn = document.querySelector(".refreshlist");
     toDoList.insertBefore(li, resetBtn);
 }
@@ -99,4 +99,4 @@ function rotatePlaceholder() {
 }
 
 rotatePlaceholder();
-setInterval(rotatePlaceholder, 4000);
+// setInterval(rotatePlaceholder, 4000);

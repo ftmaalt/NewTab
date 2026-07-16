@@ -1,6 +1,6 @@
 {
   "name": "Productive New Tab Extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "chrome_url_overrides": {
     "newtab": "index.html"
